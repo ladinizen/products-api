@@ -17,6 +17,9 @@ public class Product {
         return id;
     }
 
+    // Tutorial02 - Activity 3: Removing getName() caused the name field to disappear from JSON.
+    // Getter restored after testing successfully.
+
     public String getName() {
         return name;
     }

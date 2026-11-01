@@ -25,8 +25,9 @@ public class ProductController {
     }
 
     // Add a new product
+    // Product is abstract, so use a concrete subclass for JSON requests.
     @PostMapping
-    public Product addProduct(@RequestBody Product product) {
+    public Product addProduct(@RequestBody DigitalProduct product) {
         return productService.addProduct(product);
     }
 
@@ -39,6 +40,11 @@ public class ProductController {
     @GetMapping("/search")
     public List<Product> search(@RequestParam String name) {
         return productService.findByName(name);
+    }
+
+    @GetMapping("/summaries")
+    public List<String> getSummaries() {
+        return productService.getAllSummaries();
     }
 
 }
